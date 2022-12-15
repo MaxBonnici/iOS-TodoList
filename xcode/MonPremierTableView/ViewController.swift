@@ -8,34 +8,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-            
         myData.append(MyData(title: "Faire les courses",
                                  description: "PQ, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza"))
         
         myTableView.dataSource = self
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
-        cell.myTitle.text = myData[indexPath.row].title
-        //cell.myDescription.text = myData[indexPath.row].description
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Find the row of the cell
-            let row = indexPath.row
-            myData.remove(at: row)
-            myTableView.deleteRows(at: [indexPath], with: .fade)
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,6 +27,21 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Find the row of the cell
+            let row = indexPath.row
+            myData.remove(at: row)
+            myTableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
+        cell.myTitle.text = myData[indexPath.row].title
+        return cell
+    }
     
     @IBAction func unwindToMainView(_ unwindSegue: UIStoryboardSegue) {
         let addViewController = unwindSegue.source as! AddViewController
@@ -61,7 +56,6 @@ class ViewController: UIViewController, UITableViewDataSource {
                 myTableView.reloadData()
             }
         }
-        // Use data from the view controller which initiated the unwind segue
     }
 
 

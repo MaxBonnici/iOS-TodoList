@@ -48,7 +48,7 @@
 		70032B1127566F2700F8AE83 = {
 			isa = PBXGroup;
 			children = (
-				70032B1C27566F2700F8AE83 /* My To-Do List */,
+				70032B1C27566F2700F8AE83 /* MonPremierTableView */,
 				70032B1B27566F2700F8AE83 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		70032B1C27566F2700F8AE83 /* My To-Do List */ = {
+		70032B1C27566F2700F8AE83 /* MonPremierTableView */ = {
 			isa = PBXGroup;
 			children = (
 				70032B1D27566F2700F8AE83 /* AppDelegate.swift */,
@@ -76,7 +76,7 @@
 				70032B2827566F2800F8AE83 /* LaunchScreen.storyboard */,
 				70032B2B27566F2800F8AE83 /* Info.plist */,
 			);
-			path = "My To-Do List";
+			path = MonPremierTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
