@@ -9,7 +9,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         myData.append(MyData(title: "Faire les courses",
-                                 description: "PQ, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza, Alcool, Alcool, Alcool, Pizza"))
+                                 description: "PQ, Pizza, Alcool"))
         
         myTableView.dataSource = self
     }
